@@ -5,7 +5,7 @@ const ClientCard = ({ src, alt, desc }) => {
   return (
     <Tilt
       options={{ reverse: true, max: 45, scale: 1, speed: 450 }}
-      className="flex-grow flex"
+      className="flex-grow flex justify-center"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
