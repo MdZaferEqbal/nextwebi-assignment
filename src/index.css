@@ -168,7 +168,6 @@ body {
 .hero-heading {
   font-family: "zentry", sans-serif;
   letter-spacing: 0.4rem;
-  mix-blend-mode: screen;
 }
 
 .hero-heading b {
