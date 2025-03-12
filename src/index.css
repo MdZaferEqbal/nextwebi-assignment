@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dutch-white: #efdfbb;
+  --light-almond: #eee5da;
+  --deep-charcoal: #262424;
+}
+
+@font-face {
+  font-family: "circular-web";
+  src: url("/fonts/circularweb-book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "general";
+  src: url("/fonts/general.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "robert-medium";
+  src: url("/fonts/robert-medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "robert-regular";
+  src: url("/fonts/robert-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "zentry";
+  src: url("/fonts/zentry-regular.woff2") format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--light-almond);
+}
+
+::-webkit-scrollbar {
+  width: 0.9375rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-almond);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #eee5daae;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #eee5da89;
+}
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  margin: 5% auto;
+}
+
+.bg-deep-charcoal {
+  background-color: var(--deep-charcoal);
+}
+
+.bg-light-almond-500 {
+  background-color: #eee5da80;
+}
+
+.text-light-almond {
+  color: var(--light-almond);
+}
+
+.text-dutch-white {
+  color: var(--dutch-white);
+}
+
+.text-deep-charcoal {
+  color: var(--deep-charcoal);
+}
+
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+.navbar-drop-down-menu {
+  animation: 0.3s ease 0s forwards navbarDropDownMenuAnimation;
+}
+.reverse-animation {
+  animation: 0.3s ease 0s forwards navbarDropDownMenuReverseAnimation;
+  animation-direction: reverse;
+}
+@keyframes navbarDropDownMenuAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+    top: -40px;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+    top: 68px;
+  }
+}
+@keyframes navbarDropDownMenuReverseAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+    top: -40px;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+    top: 68px;
+  }
+}
+
+.drop-down-menu-class div {
+  position: relative;
+}
+.drop-down-menu-class span {
+  background-color: #fff;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s, width 0.5s;
+}
+.drop-down-menu-class .line-1 {
+  transform: translate(-50%, -10px);
+}
+.drop-down-menu-class .line-3 {
+  transform: translate(-50%, 7px);
+}
+.open-menu .line-1 {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.open-menu .line-2 {
+  width: 0;
+}
+.open-menu .line-3 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.video-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-heading {
+  font-family: "zentry", sans-serif;
+  letter-spacing: 0.4rem;
+  mix-blend-mode: screen;
+}
+
+.hero-heading b {
+  font-feature-settings: "ss01" on;
+}
+
+.client-card {
+  background-color: #26242425;
+}
+
+.clients-container img {
+  max-width: 60px;
+}
+
+.about-container {
+  display: grid;
+  gap: 100px;
+  grid-template-columns: 1fr 1fr;
+  min-width: 90vw;
+}
+
+.about-card-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 20;
+  margin-bottom: -120;
+}
+
+.about-splash {
+  background: linear-gradient(
+    306deg,
+    var(--light-almond),
+    var(--deep-charcoal)
+  );
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip-path: path(
+    "M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
+  );
+}
+
+.about-card {
+  width: 300;
+  height: 430;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20;
+  background: #f5f5f5;
+  box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+    0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+    0 0 16px hsl(0deg 0% 0% / 0.075);
+  transform-origin: 10% 60%;
+}
+
+.scroller {
+  overflow: hidden;
+}
+
+.inner__scroller {
+  width: max-content;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.test {
+  color: tomato;
+}
