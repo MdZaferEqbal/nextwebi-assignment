@@ -16,34 +16,26 @@ const About = () => {
             &nbsp;?
           </motion.span>
         </h1>
-        <div className="flex justify-between flex-wrap ">
+        <div className="flex justify-between flex-wrap gap-11">
           <AboutCard
             i={0}
             title="End-to-End Expertise"
             about="We specialize in both front-end and back-end development."
-            hueA={340}
-            hueB={10}
           />
           <AboutCard
             i={1}
             title="Scalable & Secure Solutions"
             about="Our team builds robust, scalable, and secure applications."
-            hueA={20}
-            hueB={40}
           />
           <AboutCard
             i={2}
             title="Cutting-Edge Technologies"
             about="We leverage the latest frameworks and tools."
-            hueA={40}
-            hueB={60}
           />
           <AboutCard
             i={3}
             title="Client-Centric Approach"
             about="Your vision is our priority!"
-            hueA={300}
-            hueB={50}
           />
         </div>
       </section>
