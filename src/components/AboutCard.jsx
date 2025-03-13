@@ -1,7 +1,8 @@
 import * as motion from "motion/react-client";
 
-const AboutCard = ({ i, about }) => {
-  const background = `linear-gradient(306deg, hsl(0, 4%, 15%), hsl(36, 33%, 89%))`;
+const AboutCard = ({ i, about, title, hueA, hueB }) => {
+  const hue = (h) => `hsl(${h}, 100%, 50%)`;
+  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
 
   const cardVariants = {
     offscreen: {
@@ -25,15 +26,15 @@ const AboutCard = ({ i, about }) => {
     alignItems: "center",
     position: "relative",
     paddingTop: 20,
-    marginBottom: -120,
+    minHeight: 500,
   };
 
   const splash = {
     position: "absolute",
     width: 450,
-    height: 100,
-    borderRadius: 10,
+    height: 200,
     bottom: 0,
+    borderRadius: 10,
     zIndex: 2,
   };
 
@@ -48,6 +49,7 @@ const AboutCard = ({ i, about }) => {
     boxShadow:
       "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
     transformOrigin: "10% 60%",
+    color: hue(hueA),
   };
 
   return (
@@ -58,12 +60,17 @@ const AboutCard = ({ i, about }) => {
       whileInView="onscreen"
       viewport={{ amount: 0.8 }}
     >
-      <div style={{ ...splash, background }} />
+      <div
+        style={{ ...splash, background }}
+        className="flex justify-center items-center font-bold"
+      >
+        {title}
+      </div>
       <motion.div
         style={card}
         variants={cardVariants}
         drag
-        className="card p-10 about-card-detail cursor-pointer"
+        className="card bg-light-almond p-10 about-card-detail cursor-pointer"
       >
         {about}
       </motion.div>
