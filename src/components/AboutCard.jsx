@@ -7,7 +7,6 @@ const AboutCard = ({ i, about, title }) => {
     },
     onscreen: {
       y: 50,
-      rotate: 10,
       transition: {
         type: "spring",
         bounce: 0.4,
@@ -23,8 +22,10 @@ const AboutCard = ({ i, about, title }) => {
       whileInView="onscreen"
       viewport={{ amount: 0.8 }}
     >
-      <div className="splash flex justify-center items-center font-bold text-light-almond">
-        {title}
+      <div className="splash">
+        <div className="splash--inner-container flex justify-center items-center font-bold text-light-almond">
+          {title}
+        </div>
       </div>
       <motion.div
         variants={cardVariants}
